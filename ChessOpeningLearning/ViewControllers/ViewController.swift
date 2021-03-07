@@ -117,7 +117,7 @@ class ViewController: UIViewController {
     
     func setPlayerMove(actualPlayerLabel: UILabel, nextPlayerLabel: UILabel) {
         if isOpeningComplete() {
-            setNewOpeningTexts(actualPlayerLabel: playerTwoLabel)
+            setNewOpeningTexts(actualPlayerLabel: actualPlayerLabel)
         } else {
             actualPlayerLabel.text = String(self.openingComponents[turnCounter])
             nextPlayerLabel.text = NSLocalizedString("Opening_Tap", comment: String.Empty)
