@@ -7,6 +7,5 @@
 //
 
 public extension Character {
-    
     static let Space: Character = " "
 }

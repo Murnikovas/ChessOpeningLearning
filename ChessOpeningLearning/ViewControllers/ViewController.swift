@@ -46,11 +46,20 @@ class ViewController: UIViewController {
     
     func loadMockOpenings() {
         openings["Italian Game"] = "1.e4 e5 2.Nf3 Nc6 3.Bc4"
-        openings["Ruy Lopez"] = "1.e4 e5 2.Cf3 Cc6 3.Ab5"
+        openings["Ruy Lopez"] = "1.e4 e5 2.Nf3 Nc6 3.Bb5"
         openings["Queen's Gambit"] = "1.d4 d5 2.c4"
-        openings["Hungarian Defense"] = "1.e4 e5 2.Nf3 Nc6 3.Bc4 Be7"
-        openings["Two Knights Defense"] = "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6"
-        openings["Sicilian - Dragon"] = " 1.e4 c5  2.Nf3 d6  3.d4 cxd4 4.Nxd4 Nf6  5.Nc3 g6"
+        openings["Hungarian Def."] = "1.e4 e5 2.Nf3 Nc6 3.Bc4 Be7"
+        openings["Two Knights Def."] = "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6"
+        openings["Sicilian - Dragon"] = "1.e4 c5  2.Nf3 d6  3.d4 cxd4 4.Nxd4 Nf6  5.Nc3 g6"
+        openings["Adelaide Gambit"] = "1.e4 e5 2.f4 Nc6 3.Nf3 f5"
+        openings["Benoni Def."] = "1.d4 Nf6 2.c4 c5 3.d5"
+        openings["Bogo Indian Def."] = "1.d4 Nf6 2.c4 e6 3.Nf3 Bb4+"
+        openings["Catalan Opening"] = "1.d4 Nf6 2.c4 e6 3.g3"
+        openings["Four Knights"] = "1.e4 e5 2.Nf3 Nc6 3.Nc3 Nf6"
+        openings["Scotch Game"] = "1.e4 e5 2.Nf3 Nc6 3.d4"
+        openings["Queen's Indian Def."] = "1.d4 Nf6 2.c4 e6 3.Nf3 b6"
+        openings["Grünfeld Def."] = "1.d4 Nf6 2.c4 g6 3.Nc3 d5"
+        openings["Danish Gambit"] = "1.e4 e5 2.d4 exd4 3.c3"
     }
     
     func setupRandomOpening() {
@@ -119,7 +128,9 @@ class ViewController: UIViewController {
         if isOpeningComplete() {
             setNewOpeningTexts(actualPlayerLabel: actualPlayerLabel)
         } else {
-            actualPlayerLabel.text = String(self.openingComponents[turnCounter])
+            actualPlayerLabel.text =
+                String(self.openingComponents[turnCounter]).formatWithChessIcons()
+            
             nextPlayerLabel.text = NSLocalizedString("Opening_Tap", comment: String.Empty)
             turnCounter = turnCounter + 1
         }
