@@ -11,7 +11,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChessOpeningLearning" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -39,7 +39,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2F7-Ga-ebf" userLabel="selectOpeningView">
                                         <rect key="frame" x="0.0" y="189.5" width="320" height="189"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="openingLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgU-Yq-JXr" userLabel="openingLabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="openingLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgU-Yq-JXr" userLabel="openingLabel">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="189"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
@@ -48,10 +48,10 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="wgU-Yq-JXr" firstAttribute="leading" secondItem="2F7-Ga-ebf" secondAttribute="leading" id="KYH-au-z73"/>
+                                            <constraint firstItem="wgU-Yq-JXr" firstAttribute="leading" secondItem="2F7-Ga-ebf" secondAttribute="leading" id="9cd-8g-5Ub"/>
                                             <constraint firstItem="wgU-Yq-JXr" firstAttribute="top" secondItem="2F7-Ga-ebf" secondAttribute="top" id="VjJ-TR-fbv"/>
+                                            <constraint firstAttribute="trailing" secondItem="wgU-Yq-JXr" secondAttribute="trailing" id="cm9-Ns-4S4"/>
                                             <constraint firstAttribute="bottom" secondItem="wgU-Yq-JXr" secondAttribute="bottom" id="l4q-27-FkE"/>
-                                            <constraint firstAttribute="trailing" secondItem="wgU-Yq-JXr" secondAttribute="trailing" id="qgd-gi-hod"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" id="Yq1-hb-hq7" userLabel="playerTwoView">
@@ -87,6 +87,7 @@
                     </view>
                     <connections>
                         <outlet property="openingLabel" destination="wgU-Yq-JXr" id="SnF-zy-BsW"/>
+                        <outlet property="openingView" destination="2F7-Ga-ebf" id="uxh-kq-Omr"/>
                         <outlet property="playerOneLabel" destination="fTv-RZ-0AW" id="X0U-ue-WQq"/>
                         <outlet property="playerOneView" destination="AUq-je-7lv" id="mfh-Wf-CTr"/>
                         <outlet property="playerTwoLabel" destination="FnJ-Ct-lCH" id="MHR-c9-2Ob"/>
