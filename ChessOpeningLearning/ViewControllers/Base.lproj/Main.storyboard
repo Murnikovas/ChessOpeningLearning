@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChessOpeningLearning" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jsN-Wc-9fH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AUq-je-7lv" userLabel="playerOneView">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="189.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="playerOneLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTv-RZ-0AW" userLabel="playerOneLabel">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="189.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="fTv-RZ-0AW" firstAttribute="leading" secondItem="AUq-je-7lv" secondAttribute="leading" id="09x-Mz-aXU"/>
+                                            <constraint firstAttribute="trailing" secondItem="fTv-RZ-0AW" secondAttribute="trailing" id="8Fn-Zg-aVI"/>
+                                            <constraint firstItem="fTv-RZ-0AW" firstAttribute="top" secondItem="AUq-je-7lv" secondAttribute="top" id="BNe-A4-w5D"/>
+                                            <constraint firstAttribute="bottom" secondItem="fTv-RZ-0AW" secondAttribute="bottom" id="Mrg-iL-9xA"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2F7-Ga-ebf" userLabel="selectOpeningView">
+                                        <rect key="frame" x="0.0" y="189.5" width="320" height="189"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="openingLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgU-Yq-JXr" userLabel="openingLabel">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="189"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="wgU-Yq-JXr" firstAttribute="leading" secondItem="2F7-Ga-ebf" secondAttribute="leading" id="KYH-au-z73"/>
+                                            <constraint firstItem="wgU-Yq-JXr" firstAttribute="top" secondItem="2F7-Ga-ebf" secondAttribute="top" id="VjJ-TR-fbv"/>
+                                            <constraint firstAttribute="bottom" secondItem="wgU-Yq-JXr" secondAttribute="bottom" id="l4q-27-FkE"/>
+                                            <constraint firstAttribute="trailing" secondItem="wgU-Yq-JXr" secondAttribute="trailing" id="qgd-gi-hod"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="Yq1-hb-hq7" userLabel="playerTwoView">
+                                        <rect key="frame" x="0.0" y="378.5" width="320" height="189.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="playerTwoLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FnJ-Ct-lCH" userLabel="playerTwoLabel">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="189.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="FnJ-Ct-lCH" firstAttribute="leading" secondItem="Yq1-hb-hq7" secondAttribute="leading" id="Kei-go-X8f"/>
+                                            <constraint firstItem="FnJ-Ct-lCH" firstAttribute="bottom" secondItem="9tk-zh-wXa" secondAttribute="bottom" id="L5f-CX-Sp1"/>
+                                            <constraint firstItem="FnJ-Ct-lCH" firstAttribute="top" secondItem="9tk-zh-wXa" secondAttribute="top" id="lWZ-ky-oUN"/>
+                                            <constraint firstAttribute="trailing" secondItem="FnJ-Ct-lCH" secondAttribute="trailing" id="ngg-J5-dDY"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="9tk-zh-wXa"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="jsN-Wc-9fH" secondAttribute="bottom" id="ZEd-b6-CWd"/>
+                            <constraint firstAttribute="trailing" secondItem="jsN-Wc-9fH" secondAttribute="trailing" id="fKR-KJ-gN4"/>
+                            <constraint firstItem="jsN-Wc-9fH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ftF-U6-iOI"/>
+                            <constraint firstItem="jsN-Wc-9fH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tD1-hV-LSB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="openingLabel" destination="wgU-Yq-JXr" id="SnF-zy-BsW"/>
+                        <outlet property="playerOneLabel" destination="fTv-RZ-0AW" id="X0U-ue-WQq"/>
+                        <outlet property="playerOneView" destination="AUq-je-7lv" id="mfh-Wf-CTr"/>
+                        <outlet property="playerTwoLabel" destination="FnJ-Ct-lCH" id="MHR-c9-2Ob"/>
+                        <outlet property="playerTwoView" destination="Yq1-hb-hq7" id="BnQ-5v-BhI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="116"/>
+        </scene>
+    </scenes>
+</document>

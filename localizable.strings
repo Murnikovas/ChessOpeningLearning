@@ -1,0 +1,10 @@
+/* 
+  localizable.strings
+  ChessOpeningLearning
+
+  Created by Pablo Murnikovas on 4/3/21.
+  Copyright © 2021 Pablo Murnikovas. All rights reserved.
+*/
+
+
+"opening_Ruy_Lopez" = "1.e4 e5 2.Cf3 Cc6 3.Ab5";
