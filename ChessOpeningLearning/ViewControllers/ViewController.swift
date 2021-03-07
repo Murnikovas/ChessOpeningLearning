@@ -72,6 +72,8 @@ class ViewController: UIViewController {
             self.openingMoves = openingComponents.count
             self.openingLabel.text = openingToLearnName
             self.openingView.isUserInteractionEnabled = false
+            playerOneView.isUserInteractionEnabled = true
+            playerTwoView.isUserInteractionEnabled = true
             self.setupTexts()
         }
     }
@@ -125,21 +127,21 @@ class ViewController: UIViewController {
     }
     
     func setPlayerMove(actualPlayerLabel: UILabel, nextPlayerLabel: UILabel) {
-        if isOpeningComplete() {
-            setNewOpeningTexts(actualPlayerLabel: actualPlayerLabel)
-        } else {
-            actualPlayerLabel.text =
-                String(self.openingComponents[turnCounter]).formatWithChessIcons()
+        actualPlayerLabel.text = String(self.openingComponents[turnCounter]).formatWithChessIcons()
+        nextPlayerLabel.text = NSLocalizedString("Opening_Tap", comment: String.Empty)
+        turnCounter = turnCounter + 1
             
-            nextPlayerLabel.text = NSLocalizedString("Opening_Tap", comment: String.Empty)
-            turnCounter = turnCounter + 1
+        if isOpeningComplete() {
+            playerOneView.isUserInteractionEnabled = false
+            playerTwoView.isUserInteractionEnabled = false
+            openingView.isUserInteractionEnabled = true
+            setNewOpeningTexts(nextPlayerLabel: nextPlayerLabel)
         }
     }
     
-    func setNewOpeningTexts(actualPlayerLabel: UILabel) {
+    func setNewOpeningTexts(nextPlayerLabel: UILabel) {
         openingLabel.text =  NSLocalizedString("Opening_NextOpening_Label", comment: String.Empty)
-        actualPlayerLabel.text = String.Empty
-        openingView.isUserInteractionEnabled = true
+        nextPlayerLabel.text = String.Empty
     }
     
     func isPlayerOneTurn() -> Bool {
