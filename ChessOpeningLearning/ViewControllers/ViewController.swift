@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     var openingToLearnName: String = String.Empty
     var openings: [String:String] = [:]
     var openingComponents: [String.SubSequence] = []
-    var openingMoves = 0
+    var openingMovesNumber = 0
     var turnCounter = 0
     
     override func viewDidLoad() {
@@ -71,12 +71,10 @@ class ViewController: UIViewController {
             self.openingToLearnName = name
             self.openingToLearn = openingInfo
             self.openingComponents = openingToLearn.split(separator: Character.Space)
-            self.openingMoves = openingComponents.count
+            self.openingMovesNumber = openingComponents.count
             self.openingLabel.text = openingToLearnName
-            self.openingView.isUserInteractionEnabled = false
-            playerOneView.isUserInteractionEnabled = true
-            playerTwoView.isUserInteractionEnabled = true
             self.setupTexts()
+            self.enablePlayersTap()
         }
     }
     
@@ -84,6 +82,16 @@ class ViewController: UIViewController {
         playerOneViewHeightConstraint.constant = UIScreen.main.bounds.height / FileConstants.numbersOfViewInTheMainStack
         rotateLabels()
         setupViewsActions()
+    }
+    
+    func setupViewsActions() {
+        let gesturePlayerOne = UITapGestureRecognizer(target: self, action:  #selector(self.playerOneAction(sender:)))
+        let gesturePlayerTwo = UITapGestureRecognizer(target: self, action:  #selector(self.playerTwoAction(sender:)))
+        let gestureOpening = UITapGestureRecognizer(target: self, action:  #selector(self.openingTapAction(sender:)))
+        
+        self.playerOneView.addGestureRecognizer(gesturePlayerOne)
+        self.playerTwoView.addGestureRecognizer(gesturePlayerTwo)
+        self.openingView.addGestureRecognizer(gestureOpening)
     }
     
     func setupTexts() {
@@ -103,16 +111,6 @@ class ViewController: UIViewController {
         openingLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / FileConstants.rotationDivider)
     }
     
-    func setupViewsActions() {
-        let gesturePlayerOne = UITapGestureRecognizer(target: self, action:  #selector(self.playerOneAction(sender:)))
-        let gesturePlayerTwo = UITapGestureRecognizer(target: self, action:  #selector(self.playerTwoAction(sender:)))
-        let gestureOpening = UITapGestureRecognizer(target: self, action:  #selector(self.openingTapAction(sender:)))
-        
-        self.playerOneView.addGestureRecognizer(gesturePlayerOne)
-        self.playerTwoView.addGestureRecognizer(gesturePlayerTwo)
-        self.openingView.addGestureRecognizer(gestureOpening)
-    }
-        
     @objc func playerOneAction(sender : UITapGestureRecognizer) {
         if isPlayerOneTurn() {
             setPlayerMove(actualPlayerLabel: playerOneLabel, nextPlayerLabel: playerTwoLabel)
@@ -135,9 +133,7 @@ class ViewController: UIViewController {
         turnCounter = turnCounter + 1
             
         if isOpeningComplete() {
-            playerOneView.isUserInteractionEnabled = false
-            playerTwoView.isUserInteractionEnabled = false
-            openingView.isUserInteractionEnabled = true
+            disablePlayersTap()
             setNewOpeningTexts(nextPlayerLabel: nextPlayerLabel)
         }
     }
@@ -145,6 +141,18 @@ class ViewController: UIViewController {
     func setNewOpeningTexts(nextPlayerLabel: UILabel) {
         openingLabel.text =  NSLocalizedString("Opening_NextOpening_Label", comment: String.Empty)
         nextPlayerLabel.text = String.Empty
+    }
+    
+    func disablePlayersTap() {
+        playerOneView.isUserInteractionEnabled = false
+        playerTwoView.isUserInteractionEnabled = false
+        openingView.isUserInteractionEnabled = true
+    }
+    
+    func enablePlayersTap() {
+        playerOneView.isUserInteractionEnabled = true
+        playerTwoView.isUserInteractionEnabled = true
+        openingView.isUserInteractionEnabled = false
     }
     
     func isPlayerOneTurn() -> Bool {
@@ -156,6 +164,6 @@ class ViewController: UIViewController {
     }
     
     func isOpeningComplete() -> Bool {
-        return turnCounter ==  openingMoves
+        return turnCounter ==  openingMovesNumber
     }
 }

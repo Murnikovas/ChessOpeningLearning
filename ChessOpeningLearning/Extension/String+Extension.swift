@@ -20,14 +20,14 @@ public extension String {
     static let Space = " "
     
     func formatWithChessIcons() -> String {
-        var ret: String = self
-        ret = ret.replacingOccurrences(of: "N", with: ChessPieces.KnightIcon, options: .literal, range: nil)
-        ret = ret.replacingOccurrences(of: "B", with: ChessPieces.BishopIcon, options: .literal, range: nil)
-        ret = ret.replacingOccurrences(of: "Q", with: ChessPieces.QueenIcon, options: .literal, range: nil)
-        ret = ret.replacingOccurrences(of: "R", with: ChessPieces.RookIcon, options: .literal, range: nil)
-        ret = ret.replacingOccurrences(of: "K", with: ChessPieces.KingIcon, options: .literal, range: nil)
+        var retStr: String = self
+        retStr = retStr.replacingOccurrences(of: "N", with: ChessPieces.KnightIcon, options: .literal, range: nil)
+        retStr = retStr.replacingOccurrences(of: "B", with: ChessPieces.BishopIcon, options: .literal, range: nil)
+        retStr = retStr.replacingOccurrences(of: "Q", with: ChessPieces.QueenIcon, options: .literal, range: nil)
+        retStr = retStr.replacingOccurrences(of: "R", with: ChessPieces.RookIcon, options: .literal, range: nil)
+        retStr = retStr.replacingOccurrences(of: "K", with: ChessPieces.KingIcon, options: .literal, range: nil)
         
-        return ret
+        return retStr
     }
 }
 
