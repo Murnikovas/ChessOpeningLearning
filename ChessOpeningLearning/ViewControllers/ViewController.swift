@@ -13,6 +13,7 @@ private enum FileConstants {
     static let turnDivider: Int = 2
     static let playerOneTurnMod: Int = 0
     static let playerTwoTurnMod: Int = 1
+    static let numbersOfViewInTheMainStack: CGFloat = 3.0
 }
 
 class ViewController: UIViewController {
@@ -23,7 +24,8 @@ class ViewController: UIViewController {
     @IBOutlet private weak var playerTwoLabel: UILabel!
     @IBOutlet private weak var openingView: UIView!
     @IBOutlet private weak var openingLabel: UILabel!
-    
+    @IBOutlet private weak var playerOneViewHeightConstraint: NSLayoutConstraint!
+
     var openingToLearn: String = String.Empty
     var openingToLearnName: String = String.Empty
     var openings: [String:String] = [:]
@@ -79,6 +81,7 @@ class ViewController: UIViewController {
     }
     
     func setupViews() {
+        playerOneViewHeightConstraint.constant = UIScreen.main.bounds.height / FileConstants.numbersOfViewInTheMainStack
         rotateLabels()
         setupViewsActions()
     }
@@ -145,11 +148,11 @@ class ViewController: UIViewController {
     }
     
     func isPlayerOneTurn() -> Bool {
-        return turnCounter  % FileConstants.turnDivider == FileConstants.playerOneTurnDivider
+        return turnCounter  % FileConstants.turnDivider == FileConstants.playerOneTurnMod
     }
     
     func isPlayerTwoTurn() -> Bool {
-        return turnCounter  % FileConstants.turnDivider == FileConstants.playerTwoTurnDivider
+        return turnCounter  % FileConstants.turnDivider == FileConstants.playerTwoTurnMod
     }
     
     func isOpeningComplete() -> Bool {
