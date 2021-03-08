@@ -7,4 +7,4 @@ Each player will tap when it is their turn to play, being forced to move the ope
 
 When the opening is over, you should play the game normally. After the game, you can try to play again with a new opening.
 
-![Download demo video](https://user-images.githubusercontent.com/30846288/110259738-0caee380-7f88-11eb-9674-136d73d5a388.mov)
+![ChessOpeningLearningDemo](https://user-images.githubusercontent.com/30846288/110260043-619f2980-7f89-11eb-8eaf-fa0e186ddeb8.gif)
