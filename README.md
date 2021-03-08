@@ -6,3 +6,7 @@ Place your chess game next to your smartphone / tablet and arrange the pieces as
 Each player will tap when it is their turn to play, being forced to move the opening move indicated by the app.
 
 When the opening is over, you should play the game normally. After the game, you can try to play again with a new opening.
+
+
+[![Watch the video](https://user-images.githubusercontent.com/30846288/110259738-0caee380-7f88-11eb-9674-136d73d5a388.mov)
+
