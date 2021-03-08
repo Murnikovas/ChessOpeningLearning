@@ -11,8 +11,8 @@ import UIKit
 private enum FileConstants {
     static let rotationDivider: CGFloat = 2
     static let turnDivider: Int = 2
-    static let playerOneTurnDivider: Int = 0
-    static let playerTwoTurnDivider: Int = 1
+    static let playerOneTurnMod: Int = 0
+    static let playerTwoTurnMod: Int = 1
 }
 
 class ViewController: UIViewController {
